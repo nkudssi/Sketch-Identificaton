@@ -1,42 +1,46 @@
 <html>
-    <head>
-       <title>My Selfie App</title>
- <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-<link href="style.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Sketch Identification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js" type="text/javascript"></script>
+  
+  
+    
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
- 
+
 <body>
-    <div class="container">
-    <center>
-        <a href="" id="link" download="Myselfies.png"></a>
-        <h1>Voice Selfie App 
-            <img src="selfie.jpeg" id="logo_img">
-        </h1>
-        <hr>
-        <h4 style="color:red;">Please press allow as soon as popup comes. After you give a voice command</h4>
-        
-        <div class="form-group">
-            <h3>Say "take my selfie"</h3>
-            <label>Your voice output : </label>
-            <textarea class="form-control" id="textbox" readonly="true"></textarea>
-        </div>
-        <button class="btn btn-info" onclick="start()" id="startbutton">Start</button>
-        <p>Press the Start button</p>
-
-        <label>Your webcam : </label>
-
-        <br>
-        <div id="camera"></div>
-        <label>Your selife Will Display Here: </label>
-        <div id="result"></div>
-    </center>
+<center>
+  <div id="myModal" class="modal fade">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times</button>
+        <h4 class="modal-title">Sketches</h4>
+      </div>
+      <div class="modal-body" ><img src="sketch1.png"><img src="sketch2.png"></div>
     </div>
+  </div>
+  <h1>Quick Draw Webapp
+    <button id="show_sketch" class="btn btn-info " data-toggle="modal" data-target="#myModal" > Show Sketches</button>
+  </h1>
+  <p id="label"> Your Sketch: </p>
+  <p id="confidence"> Confidence: </p>
+  <p id="sketchtobedrawn">Sketch To Be Drawn: </p>
 
-    <script src="main.js"></script>
+</center>
+
+<span id="score">Score: </span>
+<span id="timer">Timer: </span>
+
+<script src="main.js"></script>
 </body>
 </html>
